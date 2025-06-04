@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Skywatcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/skywatcher/" />
+  
+<script type="module">
+import init, * as bindings from '/skywatcher/skywatcher-ecdc33db43db973d.js';
+const wasm = await init({ module_or_path: '/skywatcher/skywatcher-ecdc33db43db973d_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+  
+  <link rel="stylesheet" href="/skywatcher/style-28dee162852d2ce6.css" integrity="sha384-W83ZQ61uwA1ApqQfQLhuZ8dkNoRh8q0aW3Sik0y3nBly/AU+cMmupUcrj6N7FNL5"/>
+  <link rel="icon" href="assets/weather/1.webp" />
+<link rel="modulepreload" href="/skywatcher/skywatcher-ecdc33db43db973d.js" crossorigin="anonymous" integrity="sha384-BHgu88nwd8UlubSLNYmRq1C9bM+M9tfLLXfYGNU6nJErS6hUh01yx1P8BVt8Bc//"><link rel="preload" href="/skywatcher/skywatcher-ecdc33db43db973d_bg.wasm" crossorigin="anonymous" integrity="sha384-8HDpInOmmPkNS4cEqEhR6byTIMeyFTcNQq0y79Sqb76TaavW4DlPn9tMS4L6xiqH" as="fetch" type="application/wasm"></head>
+
+<body class="bg-slate-900 text-slate-200"></body>
+
+</html>
